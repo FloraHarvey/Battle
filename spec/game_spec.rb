@@ -20,8 +20,7 @@ describe Game do
 
   describe "#switch_turns" do
     it "alternates players" do
-      game.switch_turns
-      expect(game.current_player).to eq john
+      expect{game.switch_turns}.to change{game.current_player}.to john
     end
   end
 
