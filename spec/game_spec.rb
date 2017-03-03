@@ -20,15 +20,15 @@ describe Game do
 
   describe "#switch_turns" do
     it "alternates players" do
-      expect{game.switch_turns}.to change{game.current_player}.to john
+      expect{game.switch_turns}.to change{game.current_player}.to flora
     end
   end
 
   describe '#winning' do
     it 'shows the winner when the opponent reaches 0HP' do
-      allow(game.player_2).to receive(:hit_points).and_return(10)
-      expect(game).to receive(:confirm_winner)
+      4.times {game.attack(flora)}
       game.attack(flora)
+      expect(game.zero_points?(flora)).to eq true
     end
   end
 

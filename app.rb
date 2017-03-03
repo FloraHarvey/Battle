@@ -25,9 +25,18 @@ class Battle < Sinatra::Base
   get '/attack' do
     p params
     @game = $game
-    @game.attack(@game.current_player)
-    @game.switch_turns
-    erb :attack
+    @game.attack(@game.opponent)
+    if @game.zero_points?(@game.opponent)
+      redirect '/game_over'
+    else
+      @game.switch_turns
+      erb :attack
+    end
+  end
+
+  get '/game_over' do
+    @game = $game
+    erb :game_over
   end
 
 
