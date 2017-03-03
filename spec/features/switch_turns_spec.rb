@@ -4,6 +4,6 @@ feature "Switching turns" do
     click_button("Attack!")
     click_button("OkieDokie")
     click_button("Attack!")
-    expect(page).to have_content "John: 90 HP | Flora: 90 HP"
+    expect(page).to have_content "John: 40 HP | Flora: 40 HP"
   end
 end

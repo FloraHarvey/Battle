@@ -8,7 +8,7 @@ end
 feature "Viewing hit points" do
   scenario "allows player 1 to view player 2's hit points" do
     sign_in_and_play
-    expect(page).to have_content("Flora: 100 HP")
+    expect(page).to have_content("Flora: 50 HP")
   end
 end
 
