@@ -12,7 +12,7 @@ describe Player do
 
   describe '#hit points' do
     it 'returns the hitpoints' do
-      expect(john.hit_points).to eq(100)
+      expect(john.hit_points).to eq(50)
     end
   end
 

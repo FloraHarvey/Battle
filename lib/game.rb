@@ -18,4 +18,10 @@ class Game
       }
   end
 
+  def confirm_winner
+    players = [player_1, player_2]
+    if current_player.hit_points == 0
+    winner = players.find { |player| player.hit_points != 0}
+  end
+end
 end

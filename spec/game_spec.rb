@@ -24,4 +24,12 @@ describe Game do
     end
   end
 
+  describe '#winning' do
+    it 'shows the winner when the opponent reaches 0HP' do
+      allow(game.player_2).to receive(:hit_points).and_return(10)
+      expect(game).to receive(:confirm_winner)
+      game.attack(flora)
+    end
+  end
+
 end
