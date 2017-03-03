@@ -22,11 +22,11 @@ class Battle < Sinatra::Base
     erb :play
   end
 
-
   get '/attack' do
     p params
     @game = $game
-    @game.attack(@game.player_2)
+    @game.attack(@game.current_player)
+    @game.switch_turns
     erb :attack
   end
 

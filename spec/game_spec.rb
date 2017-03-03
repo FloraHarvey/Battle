@@ -18,4 +18,11 @@ describe Game do
     end
   end
 
+  describe "#switch_turns" do
+    it "alternates players" do
+      game.switch_turns
+      expect(game.current_player).to eq john
+    end
+  end
+
 end
